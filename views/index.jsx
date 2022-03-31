@@ -5,6 +5,7 @@ function Index ({breads}) {
     return (
       <Default>
         <h2>Index Page</h2>
+        
         <ul>
             {
                 breads.map((bread, index)=> {
@@ -18,7 +19,9 @@ function Index ({breads}) {
                 })
             }
         </ul>
-        
+        <div className="newButton">
+  <a href="/breads/new"><button>Add a new bread</button></a>
+</div>
       </Default>
     )
 }

@@ -1,4 +1,5 @@
 const express= require('express')
+const methodOverride= require('method-override')
 
 //configuration
 require('dotenv').config()
@@ -7,10 +8,12 @@ const app= express()
 
 
 // MIDDLEWARE
-app.set('views', __dirname + '/views')
+app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}))
+app.use(methodOverride('_method'))
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
-app.use(express.static('public'))
+
 
 
 //ROUTES
@@ -19,9 +22,9 @@ app.get("/", (req, res) => {
 })
 
 // 404 Page
-app.get('*', (req, res) => {
-    res.send('404')
-  })
+// app.get('*', (req, res) => {
+//     res.send('404')
+//   })
 
 //BREADS
 const breadsController= require('./controllers/bread_controllers.js')
