@@ -8,8 +8,8 @@ const breadSchema = new Schema({
   hasGluten:  Boolean,
   image: {type: String, default: 'https://images.unsplash.com/photo-1559811814-e2c57b5e69df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJyZWFkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'},
   baker: {
-    type: String,
-    enum: ['Rachel', 'Monica', 'Joey', 'Chandler', 'Ross', 'Phoebe']
+    type: Schema.Types.ObjectId,
+    ref: 'Baker'
   }
 
 })

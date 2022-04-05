@@ -23,16 +23,17 @@ app.get("/", (req, res) => {
     res.send("Wecome to an awesome app about breads")
 })
 
-// 404 Page
-// app.get('*', (req, res) => {
-//     res.send('404')
-//   })
 
-//BREADS
-const breadsController= require('./controllers/bread_controllers.js')
+// breads
+const breadsController = require('./controllers/bread_controllers.js')
 app.use('/breads', breadsController)
+
+// bakers 
+const bakersController = require('./controllers/bakers_controller.js')
+app.use('/bakers', bakersController)
 
 //Listen
 app.listen(PORT, ()=> {
     console.log('nomming at port', PORT)
 })
+
