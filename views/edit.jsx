@@ -5,7 +5,7 @@ function Edit ({bread, bakers}) {
     return (
       <Default>
         <h2>Edit a bread</h2>
-        <form action={`/breads/${bread.id}?_method=PUT`} method="POST">          <label htmlFor="name">Name</label>
+        <form action={`/breads/${bread._id}?_method=PUT`} method="POST">          <label htmlFor="name">Name</label>
           <input
             type="text"
             name="name"
@@ -24,7 +24,7 @@ function Edit ({bread, bakers}) {
             <select name="baker" id="baker" defaultValue={bread.baker}>
             {bakers.map((baker) => {
                 return(
-                    <option value={baker.id} key={baker.id}>{baker.name}</option>
+                    <option value={baker._id} key={baker._id}>{baker.name}</option>
                 )
              })}
             </select>
